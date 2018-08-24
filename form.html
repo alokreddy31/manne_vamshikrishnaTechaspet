@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+
+<div class="container">
+  <form action="productinsert.php" method="POST">
+  <h2>Enter product details</h2>
+    <div class="row">
+      <div class="col-25">
+        <label for="Product Name">Product Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="Product Name" name="Product Name" placeholder="Product Name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Price">Price</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="Price" name="Price" placeholder="Price..">
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+        <label for="Quantity">Quantity</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="Quantity" name="" placeholder="Quantity..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Category">Category</label>
+      </div>
+      <div class="col-75">
+        <select id="Category" name="Category">
+		 <option value="">--none--</option>
+          <option value="beauty">beauty</option>
+          <option value="health">health</option>
+          <option value="grocery">grocery</option>
+		  <option value="electronics">electronics</option>
+		   <option value="kitchen">kitchen</option>
+        </select>
+      </div>
+    </div>
+	
+   <div class="row">
+      <div class="col-25">
+        <label for="Purchase Date">Purchase Date</label>
+      </div>
+      <div class="col-75">
+        <input type="date" id="Purchase Date" name="Purchase Date" placeholder="Purchase Date..">
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+        <label for="Expiry date">Expiry date</label>
+      </div>
+      <div class="col-75">
+        <input type="date" id="Expiry date" name="Expiry date" placeholder="Expiry date..">
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<?php
+$host = "localhost";
+$userName = "admin";
+$password = "";
+$dbName = "product";
+$con=mysqli_connect($host,$username,$password,$dbName);
+?>
+<body>
+<div class="container">
+  <form action="showdetails.php" method="POST">
+   <div class="row">
+      <div class="col-25">
+        <label for="Category">Category</label>
+      </div>
+      <div class="col-75">
+        <select id="Category" name="Category">
+		 <option value="">--none--</option>
+          <option value="pricehtl">price high to low</option>
+          <option value="pricelth">price low to high</option>
+          <option value="beauty">beauty</option>
+		  <option value="health">health</option>
+		   <option value="kitchen">kitchen</option>
+        </select>
+      </div>
+    </div>
+</body>
+<?php
+$cat=$_POST['Category'];
+if($cat=='pricehtl')
+$sql='select * from product ORDERBY price DESC';
+elseif($cat=='pricelth')
+$sql='select * from product ORDERBY price ';
+elseif($cat=='beauty')
+$sql='select * from product where Category=beauty';
+elseif{}
+$result=mysqli_Query($con,$sql);
+if (mysqli_num_rows($result) > 0) {
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<p>name" . $row["product name"]. " price: " . $row["price"]. "  Quantity available".$row["quantity"]. "</p><br>";
+    }
+
+?>
+</html>
